@@ -5,14 +5,16 @@ namespace MvcMovie.Controllers
 {
     public class HelloWorldController : Controller
     {
-        public string Index()
+        public IActionResult Index()
         {
-            return "Hello world index";
+            return View();
         }
 
-        public string Welcome()
+        public IActionResult Welcome(string id)
         {
-            return "./Welcome";
+            ViewData["Message"] =  "Hello " + id;
+
+            return View();
         }
 
         // requires using System.Text.Encodings.Web;
