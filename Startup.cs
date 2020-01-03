@@ -37,6 +37,14 @@ namespace MvcMovie
                 .AddEntityFrameworkStores<MvcMovieContext>();
 
             services.AddRazorPages();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

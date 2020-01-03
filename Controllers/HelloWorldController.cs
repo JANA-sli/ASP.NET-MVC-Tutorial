@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Encodings.Web;
 
 namespace MvcMovie.Controllers
 {
+    [Authorize]
     public class HelloWorldController : Controller
     {
         public IActionResult Index()
