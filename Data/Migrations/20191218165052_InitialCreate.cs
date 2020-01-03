@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MvcMovie.Migrations
+namespace MvcMovie.Data.Migrations
 {
     public partial class InitialCreate : Migration
     {
