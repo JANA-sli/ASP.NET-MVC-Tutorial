@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcMovie.Data;
+using MvcMovie.Models;
 
 namespace MvcMovie
 {
@@ -33,7 +34,7 @@ namespace MvcMovie
                 options.UseSqlite(
                     Configuration.GetConnectionString("MvcMovieContext")));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<CustomIdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<MvcMovieContext>();
 
             services.AddRazorPages();
